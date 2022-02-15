@@ -18,16 +18,16 @@ init python:
 ```
 Tutorials will always tell you to write:
 ```py
-define horn = Character("Horn nii-san", color="#fff")
-define horn_thinking = Character("Horn nii-san", color="#fff", what_prefix="(", what_suffix=")")
-define horn_doing = Character("Horn nii-san", color="#fff", what_prefix="*", what_suffix="*")
+default horn = Character("Horn nii-san", color="#fff")
+default horn_thinking = Character("Horn nii-san", color="#fff", what_prefix="(", what_suffix=")")
+default horn_doing = Character("Horn nii-san", color="#fff", what_prefix="*", what_suffix="*")
 $ horn_lovepoints = 0
 $ horn_path = True
 ```
 
 With my module you can just write:
 ```py
-define horn = Person("Horn nii-san", color="#fff")
+default horn = Person("Horn nii-san", color="#fff")
 # Lovepoints will automatically be 0 and path will automatically be True
 ```
 Example:
