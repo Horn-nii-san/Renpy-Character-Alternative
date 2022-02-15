@@ -12,6 +12,7 @@ init python:
             self.s = Character(name, color=color, what_color=what_color, what_prefix=what_prefix, what_suffix=what_suffix) # Normal text
             self.t = Character(name, color=color, what_color=what_color, what_prefix="(", what_suffix=")") # (Thinking)
             self.d = Character(name, color=color, what_color=what_color, what_prefix="*", what_suffix="*") # *Doing*
+            self.name = name
             self.pts = points
             self.path = path
 
@@ -35,7 +36,7 @@ default horn = Person("Horn nii-san", color="#fff")
 Example:
 ```py
 label start:
-  horn.s "Hey MC"
+  horn.s "Hey [mc.name]"
   mc.s "Hey Horn, you're looking rather handsome today. (no homo.)"
   $ horn.pts += 1
   horn.t "That's really sweet!"
@@ -45,7 +46,7 @@ label start:
 Instead of:
 ```py
 label start:
-  horn "Hey MC"
+  horn "Hey [mc]"
   mc "Hey Horn, you're looking rather handsome today. (no homo.)"
   $ horn_points += 1
   horn_thinking "That's really sweet!"
@@ -64,6 +65,7 @@ init python:
             self.s = Character(name, color=color, what_color=what_color, what_prefix=what_prefix, what_suffix=what_suffix) # Normal text
             self.t = Character(name, color=color, what_color=what_color, what_prefix="(", what_suffix=")") # (Thinking)
             self.d = Character(name, color=color, what_color=what_color, what_prefix="*", what_suffix="*") # *Doing*
+            self.name = name
             if points is None:
                 self.pts = points
             else:
@@ -97,7 +99,7 @@ default horn = Person("Horn nii-san", color="#fff", points=Points())
 Example:
 ```py
 label start:
-  horn.s "Hey MC"
+  horn.s "Hey [mc.name]"
   mc.s "Hey Horn, you're looking rather handsome today. (no homo.)"
   $ horn.pts.love += 1
   horn.t "That's really sweet!"
@@ -110,7 +112,7 @@ label start:
 Instead of:
 ```py
 label start:
-  horn "Hey MC"
+  horn "Hey [mc]"
   mc "Hey Horn, you're looking rather handsome today. (no homo.)"
   $ horn_lovepoints += 1
   horn_thinking "That's really sweet!"
