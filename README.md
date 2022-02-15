@@ -37,7 +37,7 @@ Example:
 label start:
   horn.s "Hey MC"
   mc.s "Hey Horn, you're looking rather handsome today. (no homo.)"
-  horn.pts += 1
+  $ horn.pts += 1
   horn.t "That's really sweet!"
   horn.d "Blushes"
 ```
@@ -47,7 +47,7 @@ Instead of:
 label start:
   horn "Hey MC"
   mc "Hey Horn, you're looking rather handsome today. (no homo.)"
-  horn_points += 1
+  $ horn_points += 1
   horn_thinking "That's really sweet!"
   horn_doing "Blushes"
 ```
@@ -99,12 +99,12 @@ Example:
 label start:
   horn.s "Hey MC"
   mc.s "Hey Horn, you're looking rather handsome today. (no homo.)"
-  horn.pts.love += 1
+  $ horn.pts.love += 1
   horn.t "That's really sweet!"
   horn.d "Blushes"
   mc.s "I was kidding, you're ugly."
-  horn.pts.anger += 1
-  horn.s "Showing you the [horn.pts.lust] points would be pretty sus..."
+  $ horn.pts.anger += 1
+  horn.s "Showing you the [horn.pts.lust] would be pretty sus..."
 ```
 
 Instead of:
@@ -112,10 +112,10 @@ Instead of:
 label start:
   horn "Hey MC"
   mc "Hey Horn, you're looking rather handsome today. (no homo.)"
-  horn_lovepoints += 1
+  $ horn_lovepoints += 1
   horn_thinking "That's really sweet!"
   horn_doing "Blushes"
   mc "I was kidding, you're ugly."
-  horn_angerpoints += 1
-  horn "Showing you the [horn_lustpoints] points would be pretty sus..."
+  $ horn_angerpoints += 1
+  horn "Showing you the [horn_lustpoints] would be pretty sus..."
 ```
