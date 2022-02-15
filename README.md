@@ -2,6 +2,7 @@
 ## Code fully object oriented in ren'py!
 
 
+
 Paste this in screens.rpy:
 ```py
 init python:
@@ -19,6 +20,7 @@ Tutorials will always tell you to write:
 ```py
 define horn = Character("Horn nii-san", color="#fff")
 define horn_thinking = Character("Horn nii-san", color="#fff", what_prefix="(", what_suffix=")")
+define horn_doing = Character("Horn nii-san", color="#fff", what_prefix="*", what_suffix="*")
 $ horn_lovepoints = 0
 $ horn_path = True
 ```
@@ -32,16 +34,18 @@ Example:
 ```py
 label start:
   horn.s "Hey MC"
-  mc.s "Hey Horn, you're looking rather handsome today. (no homo)"
+  mc.s "Hey Horn, you're looking rather handsome today. (no homo.)"
   horn.pts += 1
   horn.t "That's really sweet"
+  horn.d "Blushes"
 ```
 
 Instead of:
 ```py
 label start:
   horn "Hey MC"
-  mc "Hey Horn, you're looking rather handsome today. (no homo)"
+  mc "Hey Horn, you're looking rather handsome today. (no homo.)"
   horn_points += 1
   horn_thinking "That's really sweet"
+  horn_doing "Blushes"
 ```
