@@ -64,7 +64,7 @@ init python:
             self.s = Character(name, color=color, what_color=what_color, what_prefix=what_prefix, what_suffix=what_suffix) # Normal text
             self.t = Character(name, color=color, what_color=what_color, what_prefix="(", what_suffix=")") # (Thinking)
             self.d = Character(name, color=color, what_color=what_color, what_prefix="*", what_suffix="*") # *Doing*
-            if points is None:
+            if points is not None:
                 self.pts = points
             else:
                 self.pts = 0
